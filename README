@@ -1,3 +1,23 @@
+### 安装依赖
+
+https://doc.dpdk.org/guides/linux_gsg/sys_reqs.html#compilation-of-the-dpdk
+
+```bash
+apt install libnuma-dev python3-pyelftools -y
+```
+-----------
+
+### 编译example
+https://doc.dpdk.org/guides/sample_app_ug/compiling.html
+https://doc.dpdk.org/guides/linux_gsg/build_dpdk.html#linux-gsg-compiling-dpdk
+
+```bash
+meson setup build
+cd build
+meson configure -Dexamples=all
+ninja
+```
+
 DPDK is a set of libraries and drivers for fast packet processing.
 It supports many processor architectures and both FreeBSD and Linux.
 
