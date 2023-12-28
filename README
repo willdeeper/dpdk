@@ -1,11 +1,32 @@
-DPDK is a set of libraries and drivers for fast packet processing.
-It supports many processor architectures and both FreeBSD and Linux.
+### 安装依赖
 
-The DPDK uses the Open Source BSD-3-Clause license for the core libraries
-and drivers. The kernel components are GPL-2.0 licensed.
+https://doc.dpdk.org/guides/linux_gsg/sys_reqs.html#compilation-of-the-dpdk
 
-Please check the doc directory for release notes,
-API documentation, and sample application information.
+```bash
+sudo apt install libnuma-dev python3-pyelftools -y
+```
+开启大页
 
-For questions and usage discussions, subscribe to: users@dpdk.org
-Report bugs and issues to the development mailing list: dev@dpdk.org
+`/etc/sysctl.conf`
+一个大页默认 2048KB，所以 2048 KB * 1024 == 2 G
+
+```
+vm.nr_hugepages=1024
+```
+-----------
+
+### 编译example
+
+https://doc.dpdk.org/guides/sample_app_ug/compiling.html
+https://doc.dpdk.org/guides/linux_gsg/build_dpdk.html#linux-gsg-compiling-dpdk
+
+```bash
+meson setup build
+cd build
+meson configure -Dexamples=all
+ninja
+```
+
+dpdk repo
+
+https://git.dpdk.org/dpdk-stable/?h=v20.11.1
