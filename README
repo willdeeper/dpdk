@@ -3,7 +3,7 @@
 https://doc.dpdk.org/guides/linux_gsg/sys_reqs.html#compilation-of-the-dpdk
 
 ```bash
-apt install libnuma-dev python3-pyelftools -y
+sudo apt install libnuma-dev python3-pyelftools -y
 ```
 开启大页
 
